@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> tittles </title>
+  </head>
+  <body>
+    <b>Your randomly assigned profession:</b> {{basic.replace('"', '')}}
+    <br>
+    <table border = 1>    
+      <br>
+      <tr>
+	<th>occupations</th><th>percentage</th>
+      </tr>
+      {%- for item in fool %}
+      <tr>
+	<td>
+	  {{item[:item.rfind(",")].replace('"', '')}}
+	</td>
+	<td>
+	  {{item[item.rfind(",") + 1:]}}
+	</td>
+      </tr>
+      {%- endfor %}
+    </table>
+  </body>
+</html>
